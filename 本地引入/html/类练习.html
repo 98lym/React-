@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类练习</title>
+</head>
+<body>
+<script type="text/javascript">
+    class Father {
+        constructor(relationship, age) {
+            this.relationship = relationship
+            this.age = age
+        }
+
+        callMe() {
+            console.log('关系：' + this.relationship, '年龄：' + this.age)
+        }
+    }
+
+    class Son extends Father {
+        constructor(relationship, age, grade) {
+            super(relationship, age);
+            this.grade = grade
+        }
+
+        callMe() {
+            console.log('关系：' + this.relationship, '年龄：' + this.age, '年级：' + this.grade)
+        }
+    }
+
+    const f = new Father('父亲', 50)
+    console.log(f)
+    f.callMe()
+    const s = new Son('儿子', 22, '大三')
+    console.log(s)
+    s.callMe()
+</script>
+</body>
+</html>

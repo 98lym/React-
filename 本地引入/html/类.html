@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类</title>
+</head>
+<body>
+<script type="text/javascript">
+    class Person {
+        constructor(name, age) {
+            // 构造器中的this ===> 类的实例对象
+            this.name = name
+            this.age = age
+        }
+
+        // 一般方法
+        speak() {
+            // speak方法放在了 类的原型对象上，供实例使用
+            // 通过Person实例调用speak时，speak中的this就是Person实例
+            console.log('name：' + this.name)
+            console.log('age：' + this.age)
+        }
+    }
+
+    // 继承
+    class Student extends Person {
+        constructor(name, age, grade) {
+            super(name, age);
+            this.grade = grade
+        }
+        
+    }
+
+    const p = new Person("李", 18)
+    console.log(p, '==============')
+    p.speak()
+    const s = new Student('学生', 11, '初二')
+    console.log(s, 'student')
+    s.speak()
+</script>
+</body>
+</html>

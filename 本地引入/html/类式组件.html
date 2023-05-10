@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类式组件</title>
+</head>
+<body>
+<div id="box"></div>
+
+<script src="../js/react.development.js" crossorigin></script>
+<script src="../js/react-dom.development.js" crossorigin></script>
+<script src="../js/babel.min.js"></script>
+<script type="text/babel">
+    class FnComponents extends React.Component {
+        render() {
+            // 1.render是放在哪里的？-- FnComponents的原型对象上，供实例使用
+            // 2.render中的this是谁？-- FnComponents组件实例对象
+            console.log('render中的this:', this)
+            return <h1>类式组件</h1>
+
+        }
+    }
+
+    class Son extends React.Component {
+        render() {
+            return <span>嗨嗨嗨</span>
+        }
+    }
+
+    class Game extends React.Component {
+        render() {
+            return <div>
+                <FnComponents/>
+                <Son></Son>
+            </div>
+        }
+    }
+
+    ReactDOM.render(<Game/>, document.getElementById('box'))
+</script>
+</body>
+</html>

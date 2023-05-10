@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数式组件</title>
+</head>
+<body>
+<div id="box"></div>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const FnComponents = () => {
+        console.log(this) // 此处的this是undefined, 因为babel编译后开启了严格模式, 在严格模式下, 自定义组件中的this默认不指向window
+        return <h2>嗨嗨嗨</h2>
+    }
+    ReactDOM.render(<FnComponents/>, document.getElementById('box'))
+</script>
+</body>
+</html>

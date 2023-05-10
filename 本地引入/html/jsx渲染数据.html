@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../my-app/src/index.js"></script>
+    <!--    <link rel="stylesheet" type="text/css" href="../css/jsx.css">-->
+</head>
+<body>
+<h1 id="boxx"></h1>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const arr = ['vue', 'react', 'xxx']
+    const VDOM = (
+        <div>
+            <h1>前端JS框架列表</h1>
+            <ul>
+                {
+                    arr.map((item, index) => {
+                        return <li key={index}>{item}</li>
+                    })
+                }
+            </ul>
+        </div>
+    )
+    arr.forEach(item => {
+
+    })
+    ReactDOM.render(VDOM, document.getElementById('boxx'))
+</script>
+</body>
+</html>
