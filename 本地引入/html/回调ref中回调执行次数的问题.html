@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回调ref中回调执行次数的问题</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Weather extends React.Component {
+        state = {
+            type: false,
+            emote: '😒'
+        }
+
+        render() {
+            return (
+                <div>
+                    <h1>表情: {this.state.type ? '🤣' : '😙'}</h1>
+                    {/*如果 ref 回调函数是以内联函数的方式定义的，在更新过程中它会被执行两次，第一次传入参数 null，然后第二次会传入参数 DOM 元素*/}
+                    {/*<input ref={node => {
+                        this.input = node;
+                        console.log('测试node', node)
+                    }} type="text"/>*/}
+                    <input type="text" ref={this.inputFn}/>
+                    <button onClick={this.switch}>切换</button>
+                </div>
+            )
+        }
+
+        inputFn = (node) => {
+            this.input = node
+            this.setState({type: true})
+        }
+        switch = () => {
+            const {type} = this.state
+            this.setState({type: !type})
+        }
+    }
+
+    ReactDOM.render(<Weather/>, document.getElementById("box"))
+</script>
+</body>
+</html>

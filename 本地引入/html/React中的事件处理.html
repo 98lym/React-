@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React中的事件处理</title>
+    <style>
+        .emote {
+            font-size: 20px;
+            background-color: pink;
+            width: 222px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Demo extends React.Component {
+
+        over = (e) => {
+            e.target.innerText = '💥'
+        }
+        out = (e) => {
+            e.target.innerText = '(❁´◡`❁)'
+        }
+
+        render() {
+            return (
+                <ul onMouseOver={this.over} onMouseOut={this.out} className="emote">
+                    <li>😙</li>
+                    <li>🤣</li>
+                    <li>😒</li>
+                    <li>💖</li>
+                    <li>👴</li>
+                    <li>🎶</li>
+                </ul>
+            )
+        }
+    }
+
+    ReactDOM.render(<Demo/>, document.getElementById("box"))
+</script>
+</body>
+</html>

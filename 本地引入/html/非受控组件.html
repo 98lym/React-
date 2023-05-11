@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>非受控组件</title>
+    <style lang="less">
+      .form {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 250px;
+
+        .term {
+          float: right;
+        }
+
+        .li {
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Form extends React.Component {
+
+        submit = (e) => {
+            e.preventDefault()
+            alert("用户名：" + e.target[0].value + "密码：" + e.target[1].value)
+        }
+
+        render() {
+            return (
+                <form action="" onSubmit={this.submit}>
+                    <ul className="form">
+                        <li className="li">用户名：<input type="text" className="term"/></li>
+                        <li className="li">密码: <input type="password" className="term"/></li>
+                        <li className="li">
+                            <button>登录</button>
+                        </li>
+                    </ul>
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(<Form/>, document.getElementById("box"))
+</script>
+</body>
+</html>

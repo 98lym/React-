@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6c582f-5fc7-4715-945d-82dd986d8ee5" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/my-app/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/setupTests.js" beforeDir="false" />
+    <list default="true" id="bb6c582f-5fc7-4715-945d-82dd986d8ee5" name="变更" comment="学习到函数的柯里化">
+      <change afterPath="$PROJECT_DIR$/本地引入/html/React中的事件处理.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/createRef.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/受控组件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/回调ref中回调执行次数的问题.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/回调函数式ref.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/字符型ref.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/非受控组件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/高阶函数_函数柯里化.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/react学习笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/本地引入/html/props_简写.html" beforeDir="false" afterPath="$PROJECT_DIR$/本地引入/html/props_简写.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/本地引入/html/函数式组件使用props.html" beforeDir="false" afterPath="$PROJECT_DIR$/本地引入/html/函数式组件使用props.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +37,20 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/my-app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3d6e8e72-ca86-4571-9246-96bfeddb26e4" />
+        <option name="url" value="git@github.com:98lym/React-.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -44,6 +62,9 @@
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectId" id="2JcisMHN6savpd5aRDEiFIXB6hM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,7 +87,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
     "ts.external.directory.path": "D:\\WebStorm 2022.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -131,7 +152,8 @@
       <workItem from="1683354097693" duration="6212000" />
       <workItem from="1683530165808" duration="5584000" />
       <workItem from="1683683682112" duration="6834000" />
-      <workItem from="1683701802885" duration="1607000" />
+      <workItem from="1683701802885" duration="7836000" />
+      <workItem from="1683767445807" duration="21725000" />
     </task>
     <servers />
   </component>
@@ -151,5 +173,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="true" />
+    <MESSAGE value="学习到函数的柯里化" />
+    <option name="LAST_COMMIT_MESSAGE" value="学习到函数的柯里化" />
   </component>
 </project>

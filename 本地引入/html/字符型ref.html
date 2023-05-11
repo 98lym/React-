@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符型ref</title>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Left extends React.Component {
+        render() {
+            console.log(this)
+            return (
+                <span>
+                    <input ref="input" placeholder="点击按钮提示数据"/>
+                    &nbsp;&nbsp;&nbsp;
+                    <button onClick={this.buttonFn}>提示输入数据</button>
+                    &nbsp;&nbsp;&nbsp;
+                </span>
+            )
+        }
+
+        buttonFn = () => {
+            const {input} = this.refs
+            alert(input.value)
+            input.value = ''
+        }
+    }
+
+    class Right extends React.Component {
+        render() {
+            return (
+                <input ref="input" onBlur={this.buttonFn} placeholder="失去焦点提示数据"/>
+            )
+        }
+
+        buttonFn = () => {
+            const {input} = this.refs
+            alert(input.value)
+            input.value = ''
+        }
+    }
+
+    class Game extends React.Component {
+        render() {
+            return (
+                <div>
+                    <Left/>
+                    <Right/>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Game/>, document.getElementById('box'))
+</script>
+</body>
+</html>

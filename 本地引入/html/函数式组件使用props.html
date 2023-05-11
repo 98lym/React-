@@ -9,53 +9,32 @@
 <script type="text/javascript" src="../js/react.development.js"></script>
 <script type="text/javascript" src="../js/react-dom.development.js"></script>
 <script type="text/javascript" src="../js/babel.min.js"></script>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+
 
 <script type="text/babel">
-    /*class PersonInfo extends React.Component {
-        constructor(props) {
-            super(props);
-            console.log(this.props)
-        }
-
-        static propTypes = {
-            name: PropTypes.string,
-            sex: PropTypes.string,
-            age: PropTypes.number,
-        }
-        static defaultProps = {
-            name: '老李',
-            sex: '男',
-            age: 88
-        }
-        state = {}
-
-        render() {
-            const {name, sex, age} = this.props
-            return (
-                <ul>
-                    <li>姓名：{name}</li>
-                    <li>性别：{sex}</li>
-                    <li>年龄：{age}</li>
-                </ul>
-            )
-        }
-    }*/
-
-    function PersonInfo() {
-        console.log(this)
+    function PersonInfo(props) {
+        const {name, sex, age} = props
         return (
             <ul>
-                <li>姓名：xx</li>
-                <li>性别：xxx</li>
-                <li>年龄：xxx</li>
+                <li>姓名：{name}</li>
+                <li>性别：{sex}</li>
+                <li>年龄：{age}</li>
             </ul>
         )
     }
 
+    PersonInfo.propTypes = {
+        name: PropTypes.string.isRequired
+    }
+    PersonInfo.defaultProps = {
+        age: 18
+    }
+
     const info = {
-        /*name: '老王',
+        name: '老王',
         sex: '男',
-        age: 88*/
+        // age: 88,
     }
     ReactDOM.render(<PersonInfo {...info}/>, document.getElementById('box'))
 

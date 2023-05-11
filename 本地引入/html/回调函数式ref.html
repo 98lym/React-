@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回调函数式ref</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Left extends React.Component {
+        render() {
+            return (
+                <span>
+                    <input ref={node => this.leftInput = node} placeholder="点击按钮提示数据"/>
+                    <button onClick={this.clickFn}>提示输入数据</button>
+                </span>
+            )
+        }
+
+        clickFn = () => {
+            alert(this.leftInput.value)
+        }
+    }
+
+    class Right extends React.Component {
+        render() {
+            return (
+                <input onBlur={this.inputFn} ref={node => this.rightInput = node} placeholder="失去焦点提示数据"/>
+            )
+        }
+
+        inputFn = () => {
+            alert(this.rightInput.value)
+        }
+    }
+
+    class Game extends React.Component {
+        render() {
+            console.log(this)
+            return (
+                <div>
+                    <Left/>
+                    <Right/>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Game/>, document.getElementById('box'))
+</script>
+</body>
+</html>
