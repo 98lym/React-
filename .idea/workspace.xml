@@ -4,20 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6c582f-5fc7-4715-945d-82dd986d8ee5" name="变更" comment="学习到函数的柯里化">
-      <change afterPath="$PROJECT_DIR$/本地引入/html/React中的事件处理.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地引入/html/createRef.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地引入/html/受控组件.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地引入/html/回调ref中回调执行次数的问题.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地引入/html/回调函数式ref.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地引入/html/字符型ref.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地引入/html/非受控组件.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/本地引入/html/高阶函数_函数柯里化.html" afterDir="false" />
+    <list default="true" id="bb6c582f-5fc7-4715-945d-82dd986d8ee5" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/Snipaste_2023-05-24_17-39-31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/Snipaste_2023-05-26_15-45-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/diffing算法/diffing算法1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/diffing算法/diffing算法2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/不使用函数柯里化.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/生命周期/componentWillReceiveProps.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/生命周期/getSnapshotBeforeUpdate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/生命周期/引出生命周期.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/生命周期/生命周期（新）.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/生命周期/生命周期（旧）.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/生命周期/练习.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/html/生命周期/练习2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/js/browser.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/js/prop-types-new.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/js/react-dom.production.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/本地引入/js/react.production.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/react学习笔记.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/本地引入/html/props_简写.html" beforeDir="false" afterPath="$PROJECT_DIR$/本地引入/html/props_简写.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/本地引入/html/函数式组件使用props.html" beforeDir="false" afterPath="$PROJECT_DIR$/本地引入/html/函数式组件使用props.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +56,9 @@
     &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -51,6 +66,9 @@
         <option name="url" value="git@github.com:98lym/React-.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/WebStorm2022.3/javascript/typings/react-dom/18.2.0/node_modules/@types/react/ts5.0/index.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,40 +80,49 @@
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectId" id="2JcisMHN6savpd5aRDEiFIXB6hM" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.16.0",
-    "javascript.nodejs.core.library.typings.version": "16.18.11",
-    "last_opened_file_path": "C:/Users/32124/Desktop/react/本地引入/html",
-    "list.type.of.created.stylesheet": "Sass",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "D:\\WebStorm 2022.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.16.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.34&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/32124/Desktop/一期/video_cloud_web&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;Sass&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\WebStorm 2022.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\32124\Desktop\react\本地引入\html" />
       <recent name="C:\Users\32124\Desktop\react\本地引入\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\32124\Desktop\react\本地引入\html\diffing算法" />
+      <recent name="C:\Users\32124\Desktop\react\本地引入\html" />
+      <recent name="C:\Users\32124\Desktop\react\本地引入\html\生命周期" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript 调试.jsx.html">
@@ -114,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="JavaScript 调试.jsx.html" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -153,8 +180,48 @@
       <workItem from="1683530165808" duration="5584000" />
       <workItem from="1683683682112" duration="6834000" />
       <workItem from="1683701802885" duration="7836000" />
-      <workItem from="1683767445807" duration="21725000" />
+      <workItem from="1683767445807" duration="22381000" />
+      <workItem from="1683853344776" duration="5690000" />
+      <workItem from="1683870001254" duration="5163000" />
+      <workItem from="1684135216491" duration="2332000" />
+      <workItem from="1684305980403" duration="8113000" />
+      <workItem from="1684373239751" duration="2419000" />
+      <workItem from="1684475659361" duration="472000" />
+      <workItem from="1684476207389" duration="10000" />
+      <workItem from="1684919788242" duration="2647000" />
+      <workItem from="1684979137366" duration="797000" />
+      <workItem from="1684980023527" duration="240000" />
+      <workItem from="1684980268911" duration="2759000" />
+      <workItem from="1684983328223" duration="2698000" />
+      <workItem from="1684993763799" duration="3202000" />
+      <workItem from="1685064576517" duration="1734000" />
+      <workItem from="1685066510980" duration="148000" />
+      <workItem from="1685066675222" duration="4634000" />
+      <workItem from="1685080568451" duration="6908000" />
+      <workItem from="1685323870216" duration="949000" />
+      <workItem from="1685328541758" duration="162000" />
+      <workItem from="1685328713824" duration="1298000" />
+      <workItem from="1685338626440" duration="1491000" />
+      <workItem from="1685341239387" duration="3778000" />
+      <workItem from="1685426011100" duration="1780000" />
+      <workItem from="1685496826398" duration="3144000" />
+      <workItem from="1685512064295" duration="3330000" />
+      <workItem from="1685516356222" duration="6646000" />
+      <workItem from="1685581702333" duration="1198000" />
+      <workItem from="1686189354340" duration="71000" />
+      <workItem from="1686189559967" duration="5258000" />
+      <workItem from="1686202676013" duration="5306000" />
+      <workItem from="1686725189129" duration="6364000" />
+      <workItem from="1687240997519" duration="6937000" />
     </task>
+    <task id="LOCAL-00001" summary="学习到函数的柯里化">
+      <created>1683798599938</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683798599938</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +232,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -173,7 +257,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/my-app" />
+    </ignored-roots>
     <MESSAGE value="学习到函数的柯里化" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习到函数的柯里化" />
+    <MESSAGE value="变更" />
+    <option name="LAST_COMMIT_MESSAGE" value="变更" />
   </component>
 </project>

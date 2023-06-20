@@ -45,3 +45,22 @@ ReactDOM.render(VDOM, document.getElementById('box'))
 */
 ```
 
+## 生命周期
+
+```react
+/*
+1. 初始化阶段：由ReactDOM.render()触发---初次渲染
+	(1) constructor()
+	(2) componentWillMount()
+	(3) render()
+	(4) componentDidMount()
+2. 更新阶段：由组件内部this.setSate()或父组件重新render触发
+	(1) shouldComponentUpdate()
+	(2) componentWillUpdate()
+	(3) render()
+	(4) componentDidUpdate()
+3. 卸载组件：由ReactDOM.unmountComponentAtNode()触发
+	(1) componentWillUnmount()
+*/
+```
+

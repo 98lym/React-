@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期（新）</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../../js/prop-types-new.js"></script>
+<script type="text/javascript" src="../../js/react.production.min.js"></script>
+<script type="text/javascript" src="../../js/react-dom.production.min.js"></script>
+<script type="text/javascript" src="../../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Father extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {type: 1}
+            console.log('constructor')
+        }
+
+        // UNSAFE_componentWillMount() {
+        //     console.log('组件将要挂载')
+        // }
+
+        componentDidMount() {
+            console.log('componentDidMount')
+        }
+
+        componentWillUnmount() {
+        }
+
+        change = () => {
+            let {type} = this.state
+            this.setState({type: type + 1})
+            if (type >= 3) {
+                this.setState({type: 1})
+            }
+        }
+
+        render() {
+            console.log('render')
+            let {type} = this.state
+            return (
+                <div>
+                    <h1> 😎 </h1>
+                    <button onClick={this.change}>💪</button>
+                    <Son type={type}/>
+                </div>
+            )
+        }
+    }
+
+    class Son extends React.Component {
+        state = {a: 12313}
+        // UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
+        //     console.log('组件将要收到传参')
+        // }
+
+        // 若state的值在任何时候都取决于props，使用getDerivedStateFromProps
+        static getDerivedStateFromProps(props, state) {
+            console.log('getDerivedStateFromProps', props, state)
+            return null // props
+        }
+
+        shouldComponentUpdate(nextProps, nextState, nextContext) {
+            return true
+        }
+
+        // UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {
+        //     console.log('组件将要更新')
+        // }
+
+        getSnapshotBeforeUpdate(prevProps, prevState) {
+            console.log('getSnapshotBeforeUpdate', prevProps, prevState)
+            return prevProps
+        }
+
+        componentDidUpdate(prevProps, prevState, snapshot) {
+            console.log('componentDidUpdate', prevProps, snapshot)
+        }
+
+        componentWillUnmount() {
+        }
+
+        render() {
+            let {type} = this.props
+            return (
+                <h3>{type}</h3>
+            )
+        }
+    }
+
+    ReactDOM.render(<Father/>, document.getElementById('box'))
+</script>
+</body>
+</html>

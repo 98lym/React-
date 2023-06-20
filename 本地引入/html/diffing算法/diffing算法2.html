@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diffing算法2</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../../js/prop-types-new.js"></script>
+<script type="text/javascript" src="../../js/react.production.min.js"></script>
+<script type="text/javascript" src="../../js/react-dom.production.min.js"></script>
+<script type="text/javascript" src="../../js/babel.min.js"></script>
+<script type="text/babel">
+    class Person extends React.Component {
+        state = {
+            personInfo: [
+                {
+                    name: '李四',
+                    age: 22,
+                    id: 1
+                },
+                {
+                    name: '老王',
+                    age: 18,
+                    id: 2
+                },
+            ]
+        }
+
+        add = () => {
+            this.setState(prevState => {
+                const newPerson = {name: 'xxx', age: 99, id: 3}
+                return {personInfo: [newPerson, ...prevState.personInfo]}
+            })
+        }
+
+        render() {
+            const {personInfo} = this.state
+            return (
+                <div>
+                    <button onClick={this.add}>添加人员信息</button>
+                    <ul>
+                        {
+                            personInfo.map(item => {
+                                return <li key={item.id}>
+                                    姓名：{item.name}； 年龄：{item.age}
+                                    <input type="text"/>
+                                </li>
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Person/>, document.getElementById('box'))
+</script>
+</body>
+</html>

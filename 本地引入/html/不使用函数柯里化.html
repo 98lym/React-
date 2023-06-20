@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不使用函数柯里化</title>
+    <style lang="less">
+      .form {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 250px;
+
+        .term {
+          float: right;
+        }
+
+        .li {
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Form extends React.Component {
+        state = {
+            userName: '',
+            password: ''
+        }
+
+        submit = (e) => {
+            e.preventDefault()
+            const {userName, password} = this.state
+            alert("用户名：" + userName + ';    ' + "密码：" + password)
+        }
+
+        // 保存表单数据到状态中
+        saveFormData = (formType, event) => { // 高阶函数
+            this.setState({[formType]: event.target.value})
+        }
+
+        render() {
+            return (
+                <form action="" onSubmit={this.submit}>
+                    <ul className="form">
+                        <li className="li">
+                            用户名：<input onChange={event => this.saveFormData('userName', event)}
+                                          type="text"
+                                          className="term"/>
+                        </li>
+                        <li className="li">
+                            密码: <input onChange={event => this.saveFormData('password', event)}
+                                         type="password"
+                                         className="term"/>
+                        </li>
+                        <li className="li">
+                            <button>登录</button>
+                        </li>
+                    </ul>
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(<Form/>, document.getElementById("box"))
+</script>
+</body>
+</html>

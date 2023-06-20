@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引出生命周期</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../../js/prop-types.js"></script>
+<script type="text/javascript" src="../../js/react.development.js"></script>
+<script type="text/javascript" src="../../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Demo extends React.Component {
+        state = {
+            opacity: 1
+        }
+        death = () => {
+            ReactDOM.unmountComponentAtNode(document.getElementById('box')) // 卸载
+        }
+
+        // 组件挂载完毕
+        componentDidMount() {
+            this.timer = setInterval(() => {
+                let {opacity} = this.state
+                opacity -= 0.1
+                if (opacity <= 0) opacity = 1
+                this.setState({opacity})
+            }, 100)
+        }
+
+        // 组件将要卸载
+        componentWillUnmount() {
+            clearInterval(this.timer)
+        }
+        
+        // render调用的时机： 初始化渲染、状态更新之后
+        render() {
+            return (
+                <div>
+                    <h1 style={{opacity: this.state.opacity}}>引出生命周期😶‍🌫 ️</h1>
+                    <button onClick={this.death}>关闭生命周期</button>
+                    {/*<button onClick={this.change}>开始变化</button>*/}
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Demo/>, document.getElementById('box'))
+</script>
+</body>
+</html>

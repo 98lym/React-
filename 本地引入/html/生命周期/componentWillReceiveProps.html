@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件将要接收参数</title>
+</head>
+<body>
+<div id="box"></div>
+
+<script type="text/javascript" src="../../js/prop-types.js"></script>
+<script type="text/javascript" src="../../js/react.development.js"></script>
+<script type="text/javascript" src="../../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../../js/babel.min.js"></script>
+<script type="text/babel">
+    class Father extends React.Component {
+        state = {
+            status: false
+        }
+
+        updateProps = () => {
+            this.setState({status: !this.state.status})
+        }
+
+        render() {
+            return (
+                <div>
+                    <h3>父组件的按钮</h3>
+                    <button onClick={this.updateProps}>给子组件更新传参</button>
+                    <Son status={this.state.status}/>
+                </div>
+            );
+        }
+    }
+
+    class Son extends React.Component {
+        componentWillReceiveProps(nextProps, nextContext) {
+            console.log(this)
+        }
+
+        componentDidMount() {
+            console.log(this)
+        }
+
+        render() {
+            return (
+                <div>
+                    <div>接收父组件的传参：{this.props.status + ''}</div>
+                    <h3>{this.props.status === true ? '😁' : '🤡'}</h3>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Father/>, document.getElementById('box'))
+</script>
+</body>
+</html>

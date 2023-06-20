@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../../js/prop-types.js"></script>
+<script type="text/javascript" src="../../js/react.development.js"></script>
+<script type="text/javascript" src="../../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../../js/babel.min.js"></script>
+
+<script type="text/babel">
+    class Father extends React.Component {
+        state = {
+            type: 1
+        }
+
+        componentWillMount() {
+        }
+
+        componentDidMount() {
+        }
+
+        componentWillUnmount() {
+        }
+
+        change = () => {
+            let {type} = this.state
+            this.setState({type: type + 1})
+            if (type >= 3) {
+                this.setState({type: 1})
+            }
+        }
+
+        render() {
+            let {type} = this.state
+            return (
+                <div>
+                    <h1> 😎 </h1>
+                    <button onClick={this.change}>💪</button>
+                    <Son type={type}/>
+                </div>
+            )
+        }
+    }
+
+    class Son extends React.Component {
+        componentWillReceiveProps(nextProps, nextContext) {
+        }
+
+        shouldComponentUpdate(nextProps, nextState, nextContext) {
+            return true
+        }
+
+        componentWillUpdate(nextProps, nextState, nextContext) {
+        }
+
+        componentDidUpdate(prevProps, prevState, snapshot) {
+        }
+
+        componentWillUnmount() {
+        }
+
+        render() {
+            return (
+                <h3>{this.props.type}</h3>
+            )
+        }
+    }
+
+    ReactDOM.render(<Father/>, document.getElementById('box'))
+</script>
+</body>
+</html>

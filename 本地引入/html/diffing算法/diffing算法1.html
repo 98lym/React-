@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diffing算法</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="../../js/prop-types-new.js"></script>
+<script type="text/javascript" src="../../js/react.production.min.js"></script>
+<script type="text/javascript" src="../../js/react-dom.production.min.js"></script>
+<script type="text/javascript" src="../../js/babel.min.js"></script>
+<script type="text/babel">
+    class Time extends React.Component {
+        state = {
+            time: new Date()
+        }
+
+        componentDidMount() {
+            setInterval(() => {
+                this.setState({time: new Date()})
+            }, 1000)
+        }
+
+        render() {
+            return (
+                <div>
+                    <span>1</span>
+                    <input/>
+                    <div>{this.state.time.toTimeString()}
+                        <input type="text"/>
+                    </div>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Time/>, document.getElementById('box'))
+</script>
+</body>
+</html>
