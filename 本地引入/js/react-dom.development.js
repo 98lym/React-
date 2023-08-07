@@ -1362,7 +1362,7 @@
     var currentValue = '' + node[valueField]; // if someone has already defined a value or Safari, then bail
     // and don't track value will cause over reporting of changes,
     // but it's better then a hard failure
-    // (needed for certain tests that spyOn input values and Safari)
+    // (needed for certain tests that spyOn header values and Safari)
 
     if (node.hasOwnProperty(valueField) || typeof descriptor === 'undefined' || typeof descriptor.get !== 'function' || typeof descriptor.set !== 'function') {
       return;
@@ -1457,7 +1457,7 @@
     return usesChecked ? props.checked != null : props.value != null;
   }
   /**
-   * Implements an <input> host component that allows setting these optional
+   * Implements an <header> host component that allows setting these optional
    * props: `checked`, `value`, `defaultChecked`, and `defaultValue`.
    *
    * If `checked` or `value` are not supplied (or null/undefined), user actions
@@ -1492,13 +1492,13 @@
       checkControlledValueProps('input', props);
 
       if (props.checked !== undefined && props.defaultChecked !== undefined && !didWarnCheckedDefaultChecked) {
-        error('%s contains an input of type %s with both checked and defaultChecked props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the checked prop, or the defaultChecked prop, but not ' + 'both). Decide between using a controlled or uncontrolled input ' + 'element and remove one of these props. More info: ' + 'https://reactjs.org/link/controlled-components', getCurrentFiberOwnerNameInDevOrNull() || 'A component', props.type);
+        error('%s contains an header of type %s with both checked and defaultChecked props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the checked prop, or the defaultChecked prop, but not ' + 'both). Decide between using a controlled or uncontrolled header ' + 'element and remove one of these props. More info: ' + 'https://reactjs.org/link/controlled-components', getCurrentFiberOwnerNameInDevOrNull() || 'A component', props.type);
 
         didWarnCheckedDefaultChecked = true;
       }
 
       if (props.value !== undefined && props.defaultValue !== undefined && !didWarnValueDefaultValue) {
-        error('%s contains an input of type %s with both value and defaultValue props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled input ' + 'element and remove one of these props. More info: ' + 'https://reactjs.org/link/controlled-components', getCurrentFiberOwnerNameInDevOrNull() || 'A component', props.type);
+        error('%s contains an header of type %s with both value and defaultValue props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled header ' + 'element and remove one of these props. More info: ' + 'https://reactjs.org/link/controlled-components', getCurrentFiberOwnerNameInDevOrNull() || 'A component', props.type);
 
         didWarnValueDefaultValue = true;
       }
@@ -1527,13 +1527,13 @@
       var controlled = isControlled(props);
 
       if (!node._wrapperState.controlled && controlled && !didWarnUncontrolledToControlled) {
-        error('A component is changing an uncontrolled input to be controlled. ' + 'This is likely caused by the value changing from undefined to ' + 'a defined value, which should not happen. ' + 'Decide between using a controlled or uncontrolled input ' + 'element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components');
+        error('A component is changing an uncontrolled header to be controlled. ' + 'This is likely caused by the value changing from undefined to ' + 'a defined value, which should not happen. ' + 'Decide between using a controlled or uncontrolled header ' + 'element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components');
 
         didWarnUncontrolledToControlled = true;
       }
 
       if (node._wrapperState.controlled && !controlled && !didWarnControlledToUncontrolled) {
-        error('A component is changing a controlled input to be uncontrolled. ' + 'This is likely caused by the value changing from a defined to ' + 'undefined, which should not happen. ' + 'Decide between using a controlled or uncontrolled input ' + 'element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components');
+        error('A component is changing a controlled header to be uncontrolled. ' + 'This is likely caused by the value changing from a defined to ' + 'undefined, which should not happen. ' + 'Decide between using a controlled or uncontrolled header ' + 'element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components');
 
         didWarnControlledToUncontrolled = true;
       }
@@ -1575,14 +1575,14 @@
 
     {
       // When syncing the checked attribute, it only changes when it needs
-      // to be removed, such as transitioning from a checkbox into a text input
+      // to be removed, such as transitioning from a checkbox into a text header
       if (props.checked == null && props.defaultChecked != null) {
         node.defaultChecked = !!props.defaultChecked;
       }
     }
   }
   function postMountWrapper(element, props, isHydrating) {
-    var node = element; // Do not assign value if it is already set. This prevents user text input
+    var node = element; // Do not assign value if it is already set. This prevents user text header
     // from being lost during SSR hydration.
 
     if (props.hasOwnProperty('value') || props.hasOwnProperty('defaultValue')) {
@@ -1594,7 +1594,7 @@
         return;
       }
 
-      var initialValue = toString(node._wrapperState.initialValue); // Do not assign value if it is already set. This prevents user text input
+      var initialValue = toString(node._wrapperState.initialValue); // Do not assign value if it is already set. This prevents user text header
       // from being lost during SSR hydration.
 
       if (!isHydrating) {
@@ -1663,12 +1663,12 @@
       // but that sometimes behaves strangely in IE8. We could also try using
       // `form.getElementsByName`, but that will only return direct children
       // and won't include inputs that use the HTML5 `form=` attribute. Since
-      // the input might not even be in a form. It might not even be in the
+      // the header might not even be in a form. It might not even be in the
       // document. Let's just use the local `querySelectorAll` to ensure we don't
       // miss anything.
 
 
-      var group = queryRoot.querySelectorAll('input[name=' + JSON.stringify('' + name) + '][type="radio"]');
+      var group = queryRoot.querySelectorAll('header[name=' + JSON.stringify('' + name) + '][type="radio"]');
 
       for (var i = 0; i < group.length; i++) {
         var otherNode = group[i];
@@ -1688,17 +1688,17 @@
             throw Error( "ReactDOMInput: Mixing React and non-React radio inputs with the same `name` is not supported." );
           }
         } // We need update the tracked value on the named cousin since the value
-        // was changed but the input saw no event or value set
+        // was changed but the header saw no event or value set
 
 
-        updateValueIfChanged(otherNode); // If this is a controlled radio button group, forcing the input that
+        updateValueIfChanged(otherNode); // If this is a controlled radio button group, forcing the header that
         // was previously checked to update will cause it to be come re-checked
         // as appropriate.
 
         updateWrapper(otherNode, otherProps);
       }
     }
-  } // In Chrome, assigning defaultValue to certain input types triggers input validation.
+  } // In Chrome, assigning defaultValue to certain header types triggers header validation.
   // For number inputs, the display value loses trailing decimal points. For email inputs,
   // Chrome raises "The specified value <x> is not a valid email address".
   //
@@ -5526,8 +5526,8 @@
       // starvation. However, this scenario supports the idea that expiration
       // times are an important safeguard when starvation does happen.
       //
-      // Also note that, in the case of user input specifically, this will soon no
-      // longer be an issue because we plan to make user input synchronous by
+      // Also note that, in the case of user header specifically, this will soon no
+      // longer be an issue because we plan to make user header synchronous by
       // default (until you enter `startTransition`, of course.)
       //
       // If weren't planning to make these updates synchronous soon anyway, I
@@ -5861,7 +5861,7 @@
       lanes &= ~lane;
     }
   }
-  var clz32 = Math.clz32 ? Math.clz32 : clz32Fallback; // Count leading zeros. Only used on lanes, so assume input is an integer.
+  var clz32 = Math.clz32 ? Math.clz32 : clz32Fallback; // Count leading zeros. Only used on lanes, so assume header is an integer.
   // Based on:
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32
 
@@ -6757,7 +6757,7 @@
   function isFallbackCompositionEnd(domEventName, nativeEvent) {
     switch (domEventName) {
       case 'keyup':
-        // Command keys insert or clear IME input.
+        // Command keys insert or clear IME header.
         return END_KEYCODES.indexOf(nativeEvent.keyCode) !== -1;
 
       case 'keydown':
@@ -6940,7 +6940,7 @@
 
     switch (domEventName) {
       case 'paste':
-        // If a paste event occurs after a keypress, throw out the input
+        // If a paste event occurs after a keypress, throw out the header
         // chars. Paste events should not lead to BeforeInput events.
         return null;
 
@@ -6955,11 +6955,11 @@
          *   Ex: 'AltGr + d` in Polish. There is no modified character for
          *   this key combination and no character is inserted into the
          *   document, but FF fires the keypress for char code `100` anyway.
-         *   No `input` event will occur.
+         *   No `header` event will occur.
          *
          * - `which` is the pressed key code, but a command combination is
          *   being used. Ex: `Cmd+C`. No character is inserted, and no
-         *   `input` event will occur.
+         *   `header` event will occur.
          */
         if (!isKeypressCommand(nativeEvent)) {
           // IE fires the `keypress` event when a user types an emoji via
@@ -7027,7 +7027,7 @@
    * `onKeyPress` and `onCompositionEnd`, but before `onInput`.
    *
    * `beforeInput` is spec'd but not implemented in any browsers, and
-   * the `input` event does not provide any useful information about what has
+   * the `header` event does not provide any useful information about what has
    * actually been added, contrary to the spec. Thus, `textInput` is the best
    * available event to identify the characters that have actually been inserted
    * into the target node.
@@ -7151,7 +7151,7 @@
     //
     // Batching is necessary here in order to ensure that all event handlers run
     // before the next rerender (including event handlers attached to ancestor
-    // elements instead of directly on the input). Without this, controlled
+    // elements instead of directly on the header). Without this, controlled
     // components don't work properly in conjunction with event bubbling because
     // the component is rerendered and the value reverted before all the event
     // handlers can run. See https://github.com/facebook/react/issues/708.
@@ -7177,15 +7177,15 @@
     }
   }
   /**
-   * SECTION: handle `input` event
+   * SECTION: handle `header` event
    */
 
 
   var isInputEventSupported = false;
 
   if (canUseDOM) {
-    // IE9 claims to support the input event but fails to trigger it when
-    // deleting text, so we ignore its input events.
+    // IE9 claims to support the header event but fails to trigger it when
+    // deleting text, so we ignore its header events.
     isInputEventSupported = isEventSupported('input') && (!document.documentMode || document.documentMode > 9);
   }
   /**
@@ -7233,7 +7233,7 @@
 
   function handleEventsForInputEventPolyfill(domEventName, target, targetInst) {
     if (domEventName === 'focusin') {
-      // In IE9, propertychange fires for most input events but is buggy and
+      // In IE9, propertychange fires for most header events but is buggy and
       // doesn't fire when text is deleted, but conveniently, selectionchange
       // appears to fire in all of the remaining cases so we catch those and
       // forward the event if the value has changed
@@ -7257,11 +7257,11 @@
       // helpful for us so just check activeElement instead.
       //
       // 99% of the time, keydown and keyup aren't necessary. IE8 fails to fire
-      // propertychange on the first input event after setting `value` from a
+      // propertychange on the first header event after setting `value` from a
       // script and fires only keydown, keypress, keyup. Catching keyup usually
       // gets it and catching keydown lets us fire an event for the first
       // keystroke if user does a key repeat (it'll be a little delayed: right
-      // before the second keystroke). Other input methods (e.g., paste) seem to
+      // before the second keystroke). Other header methods (e.g., paste) seem to
       // fire selectionchange normally.
       return getInstIfValueChanged(activeElementInst);
     }
@@ -7309,7 +7309,7 @@
    * change the element's value without seeing a flicker.
    *
    * Supported elements are:
-   * - input (see `isTextInputElement`)
+   * - header (see `isTextInputElement`)
    * - textarea
    * - select
    */
@@ -7592,7 +7592,7 @@
         anchorOffset = selection.anchorOffset,
         focusNode = selection.focusNode,
         focusOffset = selection.focusOffset; // In Firefox, anchorNode and focusNode can be "anonymous divs", e.g. the
-    // up/down buttons on an <input type="number">. Anonymous divs do not seem to
+    // up/down buttons on an <header type="number">. Anonymous divs do not seem to
     // expose properties, triggering a "Permission denied error" if any of its
     // properties are accessed. The only seemingly possible way to avoid erroring
     // is to access a property that typically works for non-anonymous divs and
@@ -7615,7 +7615,7 @@
    * (anchorNode, anchorOffset) within the textContent of `outerNode`, and
    * `end` is the index of (focusNode, focusOffset).
    *
-   * Returns null if you pass in garbage input but we should probably just crash.
+   * Returns null if you pass in garbage header but we should probably just crash.
    *
    * Exported only for testing.
    */
@@ -7809,7 +7809,7 @@
     return element;
   }
   /**
-   * @ReactInputSelection: React input selection module. Based on Selection.js,
+   * @ReactInputSelection: React header selection module. Based on Selection.js,
    * but modified to be suitable for react and has a couple of bug fixes (doesn't
    * assume buttons have range selections allowed).
    * Input selection module for React.
@@ -7875,9 +7875,9 @@
     }
   }
   /**
-   * @getSelection: Gets the selection bounds of a focused textarea, input or
+   * @getSelection: Gets the selection bounds of a focused textarea, header or
    * contentEditable node.
-   * -@input: Look up selection bounds of this input
+   * -@header: Look up selection bounds of this header
    * -@return {start: selectionStart, end: selectionEnd}
    */
 
@@ -7885,7 +7885,7 @@
     var selection;
 
     if ('selectionStart' in input) {
-      // Modern browser with input or textarea.
+      // Modern browser with header or textarea.
       selection = {
         start: input.selectionStart,
         end: input.selectionEnd
@@ -7901,9 +7901,9 @@
     };
   }
   /**
-   * @setSelection: Sets the selection bounds of a textarea or input and focuses
-   * the input.
-   * -@input     Set selection bounds of this input or textarea
+   * @setSelection: Sets the selection bounds of a textarea or header and focuses
+   * the header.
+   * -@header     Set selection bounds of this header or textarea
    * -@offsets   Object of same form that is returned from get*
    */
 
@@ -7977,7 +7977,7 @@
   function constructSelectEvent(dispatchQueue, nativeEvent, nativeEventTarget) {
     // Ensure we have the right element, and that the user is not dragging a
     // selection (this matches native `select` event behavior). In HTML5, select
-    // fires only on input and textarea thus if there's no focused element we
+    // fires only on header and textarea thus if there's no focused element we
     // won't dispatch.
     var doc = getEventTargetDocument(nativeEventTarget);
 
@@ -8007,14 +8007,14 @@
    * across form elements.
    *
    * Supported elements are:
-   * - input (see `isTextInputElement`)
+   * - header (see `isTextInputElement`)
    * - textarea
    * - contentEditable
    *
    * This differs from native browser implementations in the following ways:
    * - Fires on contentEditable fields as well as inputs.
    * - Fires for collapsed selection.
-   * - Fires after user input.
+   * - Fires after user header.
    */
 
 
@@ -8023,7 +8023,7 @@
     var targetNode = targetInst ? getNodeFromInstance(targetInst) : window;
 
     switch (domEventName) {
-      // Track the input node that has focus.
+      // Track the header node that has focus.
       case 'focusin':
         if (isTextInputElement(targetNode) || targetNode.contentEditable === 'true') {
           activeElement$1 = targetNode;
@@ -8053,7 +8053,7 @@
         break;
       // Chrome and IE fire non-standard event when selection is changed (and
       // sometimes when it hasn't). IE's event fires out of order with respect
-      // to key and input events on deletion, so we discard it.
+      // to key and header events on deletion, so we discard it.
       //
       // Firefox doesn't support selectionchange, so check selection status
       // after each key entry. The selection changes after keydown and before
@@ -9401,7 +9401,7 @@
     switch (tag) {
       case 'input':
         // Update the wrapper around inputs *after* updating props. This has to
-        // happen after `updateDOMProperties`. Otherwise HTML5 input validations
+        // happen after `updateDOMProperties`. Otherwise HTML5 header validations
         // raise warnings and prevent the new value from being assigned.
         updateWrapper(domElement, nextRawProps);
         break;
@@ -9703,11 +9703,11 @@
 
       case 'select':
       case 'option':
-        // For input and textarea we current always set the value property at
+        // For header and textarea we current always set the value property at
         // post mount to force it to diverge from attributes. However, for
         // option and select we don't quite do the same thing and select
         // is not resilient to the DOM state changing so we don't do that here.
-        // TODO: Consider not doing this for input and textarea.
+        // TODO: Consider not doing this for header and textarea.
         break;
 
       default:
@@ -25853,7 +25853,7 @@
       scheduleRoot:  scheduleRoot ,
       setRefreshHandler:  setRefreshHandler ,
       // Enables DevTools to append owner stacks to error messages in DEV mode.
-      getCurrentFiber:  getCurrentFiberForDevTools 
+      getCurrentFiber:  getCurrentFiberForDevTools
     });
   }
 

@@ -2416,7 +2416,7 @@
 
     {
       // `isInputPending` is not available. Since we have no way of knowing if
-      // there's pending input, always yield at the end of the frame.
+      // there's pending header, always yield at the end of the frame.
       shouldYieldToHost = function () {
         return getCurrentTime() >= deadline;
       }; // Since we yield every frame regardless, `requestPaint` has no effect.

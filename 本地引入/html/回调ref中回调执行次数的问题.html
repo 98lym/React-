@@ -23,8 +23,8 @@
                 <div>
                     <h1>表情: {this.state.type ? '🤣' : '😙'}</h1>
                     {/*如果 ref 回调函数是以内联函数的方式定义的，在更新过程中它会被执行两次，第一次传入参数 null，然后第二次会传入参数 DOM 元素*/}
-                    {/*<input ref={node => {
-                        this.input = node;
+                    {/*<header ref={node => {
+                        this.header = node;
                         console.log('测试node', node)
                     }} type="text"/>*/}
                     <input type="text" ref={this.inputFn}/>
