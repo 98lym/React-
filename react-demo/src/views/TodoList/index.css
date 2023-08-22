@@ -57,6 +57,7 @@
   user-select: none;
   display: flex;
   width: 99%;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
   height: 30px;
@@ -64,6 +65,17 @@
   border-radius: 5px;
   margin-bottom: 8px;
 }
+
+.list ul li .del {
+  width: 45px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px;
+  margin-right: 2px;
+  background-color: #e55c49;
+  color: #fff;
+}
+
 .all {
   user-select: none;
   height: 20%;
