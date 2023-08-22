@@ -72,7 +72,8 @@
   text-align: center;
   padding: 2px;
   margin-right: 2px;
-  background-color: #e55c49;
+  /* background-color: #e55c49; */
+  background-color: pink;
   color: #fff;
 }
 
