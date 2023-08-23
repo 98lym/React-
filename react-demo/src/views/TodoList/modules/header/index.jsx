@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import List from "../list";
 class Header extends Component {
   state = {}
   submit = (e) => {

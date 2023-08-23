@@ -72,9 +72,11 @@
   text-align: center;
   padding: 2px;
   margin-right: 2px;
-  /* background-color: #e55c49; */
-  background-color: pink;
+  background-color: #e55c49;
   color: #fff;
+}
+.list ul li .del:hover {
+  background-color: red;
 }
 
 .all {
@@ -91,8 +93,15 @@
   background-color: #e55c49;
   height: 30px;
   color: #fff;
-  width: 120px;
+  width: 125px;
   text-align: center;
   line-height: 30px;
   border-radius: 5px;
+}
+.all .clearDone:hover {
+  background-color: red;
+}
+.all .disabled {
+  pointer-events: none;
+  opacity: 0.6;
 }

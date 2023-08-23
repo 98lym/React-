@@ -11,20 +11,18 @@ class List extends Component {
   static defaultProps = {
     taskList: [],
   }
-  handleCheckboxChange = (itemId) => {
-    // this.setState((prevState) => ({
-    //   taskList: prevState.taskList.map((item) =>
-    //     item.id === itemId ? { ...item, isDone: !item.isDone } : item
-    //   ),
-    // }))
-  }
 
   handleMouse = (id) => {
     this.setState({ mouseID: id ? id : null })
   }
 
   handleChange = (e, id) => {
-    console.log(e, id, '🤡🤡');
+    const { checked } = e.target
+    this.props.handleChecked(checked, id)
+  }
+
+  handleDel = (id) => {
+    this.props.handleDel(id)
   }
   render() {
     const { taskList } = this.props
@@ -42,7 +40,11 @@ class List extends Component {
               onMouseLeave={() => this.handleMouse()}
             >
               <div>
-                <input type="checkbox" defaultChecked={item.isDone} onChange={(e) => this.handleChange(e, item.id)}/>
+                <input
+                  type="checkbox"
+                  checked={item.isDone}
+                  onChange={(e) => this.handleChange(e, item.id)}
+                />
                 <span
                   style={{
                     textDecoration: item.isDone ? 'line-through' : 'none',
@@ -56,6 +58,7 @@ class List extends Component {
                   display: mouseID === item.id ? 'initial' : 'none',
                 }}
                 className="del"
+                onClick={() => this.handleDel(item.id)}
               >
                 删除
               </div>
