@@ -1,0 +1,13 @@
+/* 在较小的屏幕上，将根元素字体大小调整为更小的值 */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 在更小的屏幕上，继续调整根元素字体大小 */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}

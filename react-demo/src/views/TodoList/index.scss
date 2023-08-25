@@ -1,0 +1,118 @@
+/* 主体--start */
+.todoList {
+  .listBody {
+    width: 600px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 10px 15px;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  input {
+    padding: 5px 5px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+}
+
+.list {
+  height: 190px;
+  overflow-y: scroll;
+  margin: 10px 0;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      user-select: none;
+      display: flex;
+      width: 99%;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      height: 30px;
+      border: 1px solid grey;
+      border-radius: 5px;
+      margin-bottom: 8px;
+
+      .del {
+        width: 45px;
+        border-radius: 5px;
+        text-align: center;
+        padding: 2px;
+        margin-right: 2px;
+        background-color: #e55c49;
+        color: #fff;
+      }
+
+      .del:hover {
+        background-color: red;
+      }
+    }
+  }
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+  /* 设置滚动条的宽度 */
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* 设置滚动条的拖动手柄颜色 */
+  border-radius: 4px;
+  /* 设置滚动条的拖动手柄圆角 */
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  /* 设置鼠标悬停时滚动条手柄的颜色 */
+}
+
+.list::-webkit-scrollbar-thumb:active {
+  background-color: #333;
+  /* 设置鼠标按下时滚动条手柄的颜色 */
+}
+
+.all {
+  user-select: none;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .done {
+    margin-left: 15px;
+  }
+
+  .clearDone {
+    background-color: #e55c49;
+    height: 30px;
+    color: #fff;
+    width: 125px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+  }
+
+  .clearDone:hover {
+    background-color: red;
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+}

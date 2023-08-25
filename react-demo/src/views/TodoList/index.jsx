@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid'
 import Header from './modules/header'
 import List from './modules/list'
 import All from './modules/All'
-import './index.css'
+import './index.scss'
 class TodoList extends Component {
   state = {
     taskList: [],
