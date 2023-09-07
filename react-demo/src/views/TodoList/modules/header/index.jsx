@@ -5,7 +5,7 @@ class Header extends Component {
     if (e.key === 'Enter') {
       if (!e.target.value.trim()) return
       this.props.addToDo(e.target.value)
-      e.target.value = ''
+          e.target.value = ''
     }
   }
 

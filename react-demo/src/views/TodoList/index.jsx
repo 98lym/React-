@@ -11,7 +11,7 @@ class TodoList extends Component {
   }
   addToDo = (name) => {
     const { taskList } = this.state
-    const flag = taskList.some( item => item.name === name)
+    const flag = taskList.some((item) => item.name === name)
     if (flag) return
     this.setState({
       taskList: [

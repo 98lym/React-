@@ -21,11 +21,21 @@
     }
   }
   .body {
+    border-radius: 2%;
     height: 500px;
     overflow-y: auto;
-    display: flex;
     flex-wrap: wrap; // 放不下换行
     background-color: #e8e4e4;
+    .be-current {
+      font-size: 20px;
+      width: 100%;
+      font-weight: 600;
+      text-align: center;
+      line-height: 500px;
+    }
+    .errMessage {
+      color: red;
+    }
     .box {
       width: calc(33.33% - 20px); /* 每行展示 3 个，减去间距 */
       margin: 10px;
