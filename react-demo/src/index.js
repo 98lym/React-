@@ -1,6 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client"; // React18 不在支持ReactDOM.render
+import React from 'react'
+import ReactDOM from 'react-dom/client' // React18 不在支持ReactDOM.render
+import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App/>)
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)

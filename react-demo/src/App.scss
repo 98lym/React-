@@ -4,18 +4,25 @@ body {
 }
 
 .App {
-  /* display: flex; */
+  display: flex;
   padding: 20px;
+  .nav-link {
+    a {
+      flex: 30%;
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background: skyblue;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .active {
+      color: pink;
+    }
+  }
+  .routes {
+    flex: 70%;
+  }
 }
-
-/* .App div {
-  width: 170px;
-  height: 140px;
-  border-radius: 5%;
-  background-color: pink;
-  text-align: center;
-  line-height: 140px;
-  margin-right: 50px;
-  font-size: 18px;
-  font-weight: 600;
-} */
